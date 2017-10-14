@@ -3,5 +3,5 @@ body, html {
 }
 
 body {
-  background: linear-gradient(to bottom right, midnightblue, pink);
+  background: radial-gradient(mediumturquoise, mediumorchid);
 }

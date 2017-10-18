@@ -1,0 +1,8 @@
+body, html {
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(to bottom right, lightyellow, pink);
+  background-size: 100%
+}

@@ -21,28 +21,6 @@ function makeStar(scale, radius, stroke, duration) {
     })
 }
 
-// makeStar(3, 10, { 'LemonChiffon' : 'Lavender' }, 2000).play()
-// makeStar(3, 20, { 'LightGoldenrodYellow	' : 'Thistle' }, 2100).play()
-// makeStar(3, 30, { 'PapayaWhip' : 'Plum' }, 2200).play()
-// makeStar(3, 40, { 'Moccasin' : 'Violet' }, 2300).play()
-// makeStar(3, 50, { 'PeachPuff' : 'Orchid' }, 2400).play()
-// makeStar(3, 60, { 'LemonChiffon' : 'Lavender' }, 2500).play()
-// makeStar(3, 70, { 'LightGoldenrodYellow	' : 'Thistle' }, 2600).play()
-// makeStar(3, 80, { 'PapayaWhip' : 'Plum' }, 2700).play()
-// makeStar(3, 90, { 'Moccasin' : 'Violet' }, 2800).play()
-// makeStar(3, 100, { 'PeachPuff' : 'Orchid' }, 2900).play()
-
-// makeStar(3, 10, { 'Lavender' : 'LemonChiffon' }, 2000).play()
-// makeStar(3, 20, { 'Thistle	' : 'LightGoldenrodYellow' }, 2100).play()
-// makeStar(3, 30, { 'Plum' : 'PapayaWhip' }, 2200).play()
-// makeStar(3, 40, { 'Violet' : 'Moccasin' }, 2300).play()
-// makeStar(3, 50, { 'Orchid' : 'PeachPuff' }, 2400).play()
-// makeStar(3, 60, { 'Lavender' : 'LemonChiffon' }, 2500).play()
-// makeStar(3, 70, { 'Thistle	' : 'LightGoldenrodYellow' }, 2600).play()
-// makeStar(3, 80, { 'Plum' : 'PapayaWhip' }, 2700).play()
-// makeStar(3, 90, { 'Violet' : 'Moccasin' }, 2800).play()
-// makeStar(3, 100, { 'Orchid' : 'PeachPuff' }, 2900).play()
-
 makeStar(3, 10, { 'Orchid' : 'PeachPuff' }, 2000).play()
 makeStar(3, 20, { 'Violet' : 'Moccasin' }, 2100).play()
 makeStar(3, 30, { 'Plum' : 'PapayaWhip' }, 2200).play()

@@ -1,30 +1,64 @@
 let butterfly;
 let rhinestones = [];
-let poem = [flowers, that, fade, into, bloom];
+let poem = ["flowers", "that", "fade", "into", "bloom"];
+let rhinestones_displayed = 0;
 
 function preload() {
+  bg = loadImage("../assets/checkerboard-perspective.jpg")
+  rhinestone0 = loadImage("../assets/rhinestone0.png")
   rhinestone1 = loadImage("../assets/rhinestone1.png")
   rhinestone2 = loadImage("../assets/rhinestone2.png")
   rhinestone3 = loadImage("../assets/rhinestone3.png")
   rhinestone4 = loadImage("../assets/rhinestone4.png")
-  rhinestone5 = loadImage("../assets/rhinestone5.png")
 }
 
+class rhinestoneBloom {
+  constructor(x, y, rhinestones, poem) {
+    this.x = x
+    this.y = y
+    this.image = rhinestones
+    this.word = poem
+
+  }
+  // bloom() {
+  //
+  // }
+}
 
 function setup() {
+
+  preload()
+  let images = [rhinestone0, rhinestone1, rhinestone2, rhinestone3, rhinestone4];
+
   var canvas = createCanvas(windowWidth, windowHeight);
   canvas.position(0, 0);
+
   butterfly = createImg('assets/butterfly.gif');
   mouseX = -1000
   mouseY = -1000
+
+  num_rhinestones = images.length
+  for (var i=0; i<num_rhinestones; i++) {
+    var r = new rhinestoneBloom(random(windowWidth-400), random(windowHeight-400), images[i], poem[i]);
+  rhinestones.push(r)
+  }
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
-  background(255, 255, 255);
+  background(bg);
+
   butterfly.position(mouseX-270, mouseY-270);
-  // first rhinestone appears at page load
-  image(rhinestone1, random(100, 400), random(100, 400));
-  rhinestone1.resize(800, 0);
+
+  image(rhinestones[0].image, rhinestones[0].x, rhinestones[0].y);
+
 }
 
-// new rhinestone appears upon mouse click
+function mouseClicked() {
+  if ((mouseX >= rhinestones[rhinestones_displayed].x) && (mouseX <= rhinestones[rhinestones_displayed].x + 900) && (mouseY >= rhinestones[rhinestones_displayed].y) && (mouseY <= rhinestones[rhinestones_displayed].y + 900)) {
+    rhinestones[rhinestones_displayed].bloom()
+  }
+}

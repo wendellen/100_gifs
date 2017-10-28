@@ -1,15 +1,15 @@
 let butterfly;
 let rhinestones = [];
-// let poem = ["flowers", "that", "fade", "into", "bloom"];
+let poem = ["flowers", "that", "fade", "into", "bloom"];
 let rhinestones_displayed = 0;
 
 function preload() {
-  bg = loadImage("hidden_gemz/assets/checkerboard-perspective.jpg")
-  rhinestone0 = loadImage("hidden_gemz/assets/rhinestone0.png")
-  rhinestone1 = loadImage("hidden_gemz/assets/rhinestone1.png")
-  rhinestone2 = loadImage("hidden_gemz/assets/rhinestone2.png")
-  rhinestone3 = loadImage("hidden_gemz/assets/rhinestone3.png")
-  rhinestone4 = loadImage("hidden_gemz/assets/rhinestone4.png")
+  bg = loadImage("assets/checkerboard-perspective.jpg")
+  rhinestone0 = loadImage("assets/rhinestone0.png")
+  rhinestone1 = loadImage("assets/rhinestone1.png")
+  rhinestone2 = loadImage("assets/rhinestone2.png")
+  rhinestone3 = loadImage("assets/rhinestone3.png")
+  rhinestone4 = loadImage("assets/rhinestone4.png")
 }
 
 class rhinestoneBloom {
@@ -20,9 +20,9 @@ class rhinestoneBloom {
     this.word = poem
 
   }
-  // bloom() {
-  //
-  // }
+  bloom() {
+   alert("mewrp")
+  }
 }
 
 function setup() {

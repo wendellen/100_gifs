@@ -4,12 +4,12 @@ let poem = ["flowers", "that", "fade", "into", "bloom"];
 let rhinestones_displayed = 0;
 
 function preload() {
-  bg = loadImage("assets/checkerboard-perspective.jpg")
-  rhinestone0 = loadImage("assets/rhinestone0.png")
-  rhinestone1 = loadImage("assets/rhinestone1.png")
-  rhinestone2 = loadImage("assets/rhinestone2.png")
-  rhinestone3 = loadImage("assets/rhinestone3.png")
-  rhinestone4 = loadImage("assets/rhinestone4.png")
+  bg = loadImage("./assets/checkerboard-perspective.jpg")
+  rhinestone0 = loadImage("./assets/rhinestone0.png")
+  rhinestone1 = loadImage("./assets/rhinestone1.png")
+  rhinestone2 = loadImage("./assets/rhinestone2.png")
+  rhinestone3 = loadImage("./assets/rhinestone3.png")
+  rhinestone4 = loadImage("./assets/rhinestone4.png")
 }
 
 class rhinestoneBloom {

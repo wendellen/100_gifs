@@ -1,6 +1,6 @@
 let butterfly;
 let rhinestones = [];
-let poem = ["flowers", "that", "fade", "into", "bloom"];
+// let poem = ["flowers", "that", "fade", "into", "bloom"];
 let rhinestones_displayed = 0;
 
 function preload() {

@@ -15,7 +15,7 @@ $(function(){
 
   $('.pills').mousedown(function(){
 
-    $(this).find('img').css({ opacity: 0 })
+    $(this).find('img').css({ opacity: 1 })
 
     var textEl = $(this).find('div')
     textEl.css({ opacity: 1 })

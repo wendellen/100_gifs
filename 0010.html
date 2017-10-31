@@ -8,6 +8,18 @@
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
   <script type="text/javascript" src="js/animation0010.js"></script>
+
+<!-- custom cursor -->
+  <script type="text/javascript">
+ 	$(document).ready(function(){
+      	$('.background').mousemove(function(e){
+          var w = $('#mycursor').outerWidth()
+          var h = $('#mycursor').outerHeight()
+           	$('#mycursor').css('left', e.clientX - w/2).css('top', e.clientY - h/2);
+      	});
+      });
+  </script>
+
     <title>0010</title>
   </head>
   <body>
@@ -15,20 +27,30 @@
 
       <div id="one" class="bloom">
         <img src="../assets/rhinestone0.png">
-        <div>HELLO</div>
+        <div>flowers</div>
       </div>
 
       <div id="two" class="bloom">
         <img src="../assets/rhinestone1.png">
-        <div>LOVELY</div>
+        <div>that</div>
       </div>
 
       <div id="three" class="bloom">
         <img src="../assets/rhinestone2.png">
-        <div>HUMAN</div>
+        <div>fade</div>
       </div>
 
+      <div id="four" class="bloom">
+        <img src="../assets/rhinestone3.png">
+        <div>into</div>
+      </div>
 
+      <div id="five" class="bloom">
+        <img src="../assets/rhinestone4.png">
+        <div>bloom</div>
+      </div>
+
+      <div id="mycursor"></div>
 
     </div>
 

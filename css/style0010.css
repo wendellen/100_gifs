@@ -1,5 +1,5 @@
 body{
-  background-color: #FFA8D3;
+  background-color: #000000;
   color: white;
   font-family: Helvetica;
   font-size: 200%;
@@ -10,10 +10,23 @@ body{
   background-size: cover;
   user-select: none;
   overflow: hidden;
+  cursor:none;
+}
+
+#mycursor {
+  pointer-events: none;
+ 	width: 300px;
+ 	height: 270px;
+ 	background: url('../assets/butterfly.gif') no-repeat left top;
+  background-size: contain;
+  position: absolute;
+ 	top: 0;
+ 	left: 0;
+ 	z-index: 10000;
+  transition: all .2s ease-out;
 }
 
 .background{
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,7 +39,7 @@ body{
 
 div{ margin-bottom: 5px; }
 
-.donger {
+/*.donger {
   transform: rotate(5deg);
   width: 400px;
   height: 200px;
@@ -52,7 +65,7 @@ div{ margin-bottom: 5px; }
   padding-top:100px;
   box-shadow: -70px -70px 0 rgba(0,0,0,.2);
   background-color: #A852FF;
-}
+}*/
 
 
 .bloom {
@@ -66,7 +79,6 @@ div{ margin-bottom: 5px; }
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   mix-blend-mode:luminosity;
 }
 

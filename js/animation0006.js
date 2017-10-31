@@ -23,7 +23,7 @@ class rhinestoneBloom {
   }
 
   bloom() {
-
+    alert("(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ refresh to restart rhinestone!")
   }
 }
 

@@ -1,33 +1,57 @@
-let img1
-let img2
-let img3
-let img4
-let img5
-let angle = 1
-let frameCount = 0
+$(function(){
 
-function setup() {
-  createCanvas(windowWidth, windowHeight)
-  img1 = loadImage('assets/rhinestone0.png')
-  img2 = loadImage('assets/rhinestone1.png')
-  img3 = loadImage('assets/rhinestone2.png')
-  img4 = loadImage('assets/rhinestone3.png')
-  img5 = loadImage('assets/rhinestone4.png')
+  var poem = ['flowers', 'that', 'fade', 'into', 'bloom']
+  var currentWordIndex = 0
 
-}
+  $('.lotus').mouseover(function(){
 
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
+    $(this).find('img').css({ filter: 'grayscale(100%)' })
 
-}
+  }).mouseout(function(){
 
-function draw () {
+    $(this).find('img').css({ filter: 'grayscale(0%)' })
 
-    translate(width / 2, height / 2);
-    rotate(radians(angle));
-    imageMode(CENTER);
-    image(img1, 300 + Math.sin(frameCount/10)*100, 0);
-    angle += 1;
-    frameCount += 1;
+  })
 
-}
+  $('.lotus').mousedown(function(){
+
+    $(this).find('img').css({ opacity: 1 })
+
+    var textEl = $(this).find('div')
+    textEl.css({ opacity: 1 })
+    textEl.text( poem[currentWordIndex % poem.length] )
+    currentWordIndex++
+
+    $('#mycursor').css({ transform: 'scale(0.5)' })
+
+  }).mouseup(function(){
+
+    $(this).find('img'). css({
+      opacity: 1,
+    })
+    $(this).find('div').css({
+      opacity: 0
+    })
+
+    $('#mycursor').css({ transform: 'scale(1)' })
+
+  })
+
+  function moveAllLotus(){
+    $('.lotus').each( function(){
+      $(this).css({
+        top: Math.random()*window.innerHeight - 200,
+        left: Math.random()*window.innerWidth - 200
+      })
+    })
+  }
+
+  moveAllLotus()
+
+  $('.lotus').click( function(){
+    moveAllLotus()
+  })
+
+
+
+})

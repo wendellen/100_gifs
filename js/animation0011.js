@@ -22,7 +22,7 @@ $(function(){
     textEl.text( poem[currentWordIndex % poem.length] )
     currentWordIndex++
 
-    $('#mycursor').css({ transform: 'scale(0.7)' })
+    $('#mycursor').css({ transform: 'scale(0.5)' })
 
   }).mouseup(function(){
 

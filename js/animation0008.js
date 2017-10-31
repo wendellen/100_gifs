@@ -22,11 +22,12 @@ function windowResized() {
 }
 
 function draw () {
+
     translate(width / 2, height / 2);
     rotate(radians(angle));
-    
     imageMode(CENTER);
     image(img1, 300 + Math.sin(frameCount/10)*100, 0);
     angle += 1;
     frameCount += 1;
+
 }

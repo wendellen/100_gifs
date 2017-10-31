@@ -10,18 +10,20 @@ function preload() {
   rhinestone2 = loadImage('assets/rhinestone2.png');
   rhinestone3 = loadImage('assets/rhinestone3.png');
   rhinestone4 = loadImage('assets/rhinestone4.png');
+
 }
 
 class rhinestoneBloom {
-  constructor(x, y, rhinestones, poem) {
+  constructor(x, y, image, word) {
     this.x = x
     this.y = y
-    this.image = rhinestones
-    this.word = poem
-
+    this.image = image
+    this.word = word
+    this.angle = 0
   }
+
   bloom() {
-   alert("mewrp")
+
   }
 }
 
@@ -41,11 +43,13 @@ function setup() {
   for (var i=0; i<num_rhinestones; i++) {
     var r = new rhinestoneBloom(random(windowWidth-400), random(windowHeight-400), images[i], poem[i]);
   rhinestones.push(r)
+
   }
 }
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
+
 }
 
 function draw() {
@@ -59,6 +63,7 @@ function draw() {
 
 function mouseClicked() {
   if ((mouseX >= rhinestones[rhinestones_displayed].x) && (mouseX <= rhinestones[rhinestones_displayed].x + 900) && (mouseY >= rhinestones[rhinestones_displayed].y) && (mouseY <= rhinestones[rhinestones_displayed].y + 900)) {
-    rhinestones[rhinestones_displayed].bloom()
+    rhinestones[rhinestones_displayed].bloom();
+
   }
 }

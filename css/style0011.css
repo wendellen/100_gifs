@@ -19,7 +19,7 @@ body{
   transition: all .2s ease-out;
 }
 
-.background{
+.background {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,7 +30,7 @@ body{
   height: 100%;
 }
 
-div{ margin-bottom: 5px; }
+div { margin-bottom: 5px; }
 
 .pills {
   width: 500px;

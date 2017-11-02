@@ -1,0 +1,159 @@
+
+body{
+  color: white;
+  font-family: serif;
+  font-style: oblique;
+  font-size: 27px;
+  border-style: solid;
+  border-color: white;
+  border-width: thin;
+  margin: 30px;
+  background: linear-gradient(antiqueWhite, hotPink, indigo, #1d0033);
+  background-size: cover;
+  width: 100vh;
+  height: 100vh;
+}
+
+header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: solid;
+  border-color: white;
+  border-width: thin;
+  margin: 30px;
+  padding: 60px;
+  background-image: url("../assets/zebratile.png");
+  background-repeat: repeat-x;
+  background-size: 300px;
+  text-shadow: 1px 1px #1d0033;
+  opacity: 0.8;
+}
+
+header div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 27pt;
+  position: absolute;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: solid;
+  border-color: white;
+  border-width: thin;
+  margin: 30px;
+  padding: 30px;
+  background-image: url("../assets/zebratile.png");
+  background-repeat: repeat-x;
+  background-size: 300px;
+  text-shadow: 1px 1px #1d0033;
+  opacity: 0.8;
+}
+
+nav div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: solid;
+  border-color: white;
+  border-width: thin;
+  margin-left: 30px;
+  margin-right: 30px;
+  padding: 30px;
+  background: radial-gradient(black 100%, white 0%);
+  transition: all 1s ease-out;
+  box-shadow: 10px 10px rgba(0,0,0,1);
+}
+
+nav div:hover {
+  transform: skew(20deg);
+  box-shadow: 10px 10px 0 rgba(0,0,0,1);
+}
+
+nav div:active {
+  transform: skew(-180deg);
+  box-shadow: 10px 10px rgba(0,0,0,.9);
+}
+
+
+main {
+  display: flex;
+  border-style: solid;
+  border-color: white;
+  border-width: thin;
+  margin: 30px;
+  padding: 30px;
+  background-image: url("../assets/zebratile.png");
+  background-repeat: repeat-x;
+  background-size: 300px;
+  text-shadow: 1px 1px #1d0033;
+  opacity: 0.8;
+}
+
+main article:hover {
+  transform: skew(20deg);
+}
+
+main article:active {
+  transform: skew(-180deg);
+}
+
+main aside:hover {
+  transform: skew(20deg);
+}
+
+main aside:active {
+  transform: skew(-180deg);
+}
+
+main article {
+  float: left;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: solid;
+  border-color: white;
+  border-width: thin;
+  margin-left: 30px;
+  margin-right: 30px;
+  padding: 30px;
+  background: radial-gradient(black 100%, white 0%);
+  transition: all 2s ease-out;
+}
+
+main aside {
+  float: right;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: solid;
+  border-color: white;
+  border-width: thin;
+  margin-left: 30px;
+  margin-right: 30px;
+  padding: 30px;
+  background: radial-gradient(black 100%, white 0%);
+  transition: all 2s ease-out;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: solid;
+  border-color: white;
+  border-width: thin;
+  margin: 30px;
+  padding: 20px;
+  background-image: url("../assets/zebratile.png");
+  background-repeat: repeat-x;
+  background-size: 300px;
+  text-shadow: 1px 1px #1d0033;
+  opacity: 0.8;
+}

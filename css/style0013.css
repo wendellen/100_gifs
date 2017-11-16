@@ -1,0 +1,230 @@
+body {
+  background-color: #FFFFFF;
+}
+
+/* The main container */
+.clock {
+  background-image: url("../assets/lemon0.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 40em;
+  height: 40em;
+  margin: 2em auto;
+
+  /* Can't remember what this does */
+  transform-style: preserve-3d;
+
+}
+
+/* Initial clock styles (Showing 1's) */
+
+.clock .bigcog {
+  background-image: url("../assets/lemon0.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: absolute;
+  width: 40%;
+  height: 40%;
+}
+
+.clock .bigcog:nth-child(1) { right: 51%; bottom: 51%; }
+.clock .bigcog:nth-child(2) { left: 51%; bottom: 51%; }
+.clock .bigcog:nth-child(3) { top: 51%; right: 51%; }
+.clock .bigcog:nth-child(4) { left: 51%; top: 51%; }
+
+.clock .smallcog {
+  background-image: url("../assets/lemon0.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: absolute;
+  width: 58%;
+  height: 58%;
+}
+
+.clock .smallcog { transform-origin: 100% 100%; right: 50%; bottom: 50%; }
+
+.clock .head {
+  position: absolute;
+  width: 40%;
+  height: 40%;
+}
+
+.clock .head { transform-origin: 100% 100%; right: 50%; bottom: 50%; }
+
+/*.clock .face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  color: white;
+  border-radius: 75% 25% 0% 25%;
+  border-style: solid;
+  border-color: white;
+  border-width: 0.1em 0 0 0.1em;
+  backface-visibility: hidden;
+  overflow: hidden;
+  background-color: #15171B;
+  box-shadow: 0 0 1em #1A1A1A;
+}*/
+
+/*.clock .text {
+  display: block;
+  position: absolute;
+  bottom: -100%;
+  right: -100%;
+  width: 200%;
+  height: 200%;
+  padding: 0;
+  margin: 0;
+  line-height: 1.2;
+  font-weight: 900;
+  font-size: 600%;
+  text-align: center;
+}
+
+/* Initial part rotations (For showing 1's) */
+
+/* Rotation animation rule is
+    if the end is greater than the start, it'll rotate clockwise;
+    if the end is less than the start, it's counterclockwise.
+    http://stackoverflow.com/questions/10473080/how-to-control-css3-animation-rotate-direction#comment13530782_10473150 */
+
+/* We want clockwise so end needs to be greater than start */
+
+/* The heads are rotated -2520 and -2700 so that we can run a keyframe animation
+  for several rotations and keep the heads spinning clockwise (See rule above) */
+.clock .head:nth-child(1) { transform: rotateZ(-2520deg); }
+.clock .head:nth-child(2) { transform: rotateZ(-2700deg); }
+
+/* The faces are back to back (only 1 visible at a time) */
+.clock .face.front { transform: rotateZ(180deg) rotateY(0deg); }
+.clock .face.back { transform: rotateZ(180deg) rotateY(-180deg); }
+
+/* Rotate the smallcogs so that the smallcog that has 1 in it is in the center of the clock.
+  Could just rotate the bigcogs here but that makes animation far more complicated
+  (transforms need to be complete, any that aren't specified are lost, which makes animation of just 1 transform property tricky
+  so we would need 4x the number of animations to retain each bigcog's rotateZ)  */
+.clock .bigcog:nth-child(1) .smallcog:nth-child(1) { transform: rotateZ(180deg); }
+.clock .bigcog:nth-child(1) .smallcog:nth-child(2) { transform: rotateZ(60deg); }
+.clock .bigcog:nth-child(1) .smallcog:nth-child(3) { transform: rotateZ(300deg); }
+.clock .bigcog:nth-child(2) .smallcog:nth-child(1) { transform: rotateZ(270deg); }
+.clock .bigcog:nth-child(2) .smallcog:nth-child(2) { transform: rotateZ(150deg); }
+.clock .bigcog:nth-child(2) .smallcog:nth-child(3) { transform: rotateZ(30deg); }
+.clock .bigcog:nth-child(3) .smallcog:nth-child(1) { transform: rotateZ(90deg); }
+.clock .bigcog:nth-child(3) .smallcog:nth-child(2) { transform: rotateZ(330deg); }
+.clock .bigcog:nth-child(3) .smallcog:nth-child(3) { transform: rotateZ(210deg); }
+.clock .bigcog:nth-child(4) .smallcog:nth-child(1) { transform: rotateZ(0deg); }
+.clock .bigcog:nth-child(4) .smallcog:nth-child(2) { transform: rotateZ(240deg); }
+.clock .bigcog:nth-child(4) .smallcog:nth-child(3) { transform: rotateZ(120deg); }
+
+/* Position the text on the faces so that whichever text is in the center position is the right way up */
+.clock .bigcog:nth-child(1) .text { transform: rotateZ(0deg); }
+.clock .bigcog:nth-child(2) .text { transform: rotateZ(270deg); }
+.clock .bigcog:nth-child(3) .text { transform: rotateZ(90deg); }
+.clock .bigcog:nth-child(4) .text { transform: rotateZ(180deg); }
+
+/* Ticking Animation */
+
+/* Rotate the bigcogs to give the impression the smallcogs are rotating */
+.clock.ticking .bigcog { animation: rotate-1turn-3steps 3s linear infinite; }
+
+/* Flip from one face to another. They have to use seperate animations because one starts
+  at 0deg and one at -180deg and animations must be absolute - not relative */
+.clock.ticking .face.front { animation: flip-1turn-2steps 2s linear infinite; }
+.clock.ticking .face.back { animation: flip-1turn-2steps-alt 2s linear infinite; }
+
+/* Rotate the head. In order to make this work we need to use keyframes to complete 5 180deg rotations,
+  a full 360deg rotation, 5 more 180deg rotations and another full 360deg rotation to bring us back to the start.
+  The interspersed full rotations allow all 12 values to be display and then go back to 1.
+  The relative vs absolute thing applies here too. */
+.clock.ticking .head:nth-child(1) { animation: rotate-5half-1full-x2 12s linear infinite; }
+.clock.ticking .head:nth-child(2) { animation: rotate-5half-1full-x2-alt 12s linear infinite; }
+
+/* The keyframe definitions */
+
+/* Full turn with 2 pauses starting at 0 */
+@keyframes rotate-1turn-3steps {
+  from { transform: rotateZ(0deg); }
+  16.666% { transform: rotateZ(120deg); }
+  33.333% { transform: rotateZ(120deg); }
+  50% { transform: rotateZ(240deg); }
+  66.666% { transform: rotateZ(240deg); }
+  83.333% { transform: rotateZ(360deg); }
+  to { transform: rotateZ(360deg); }
+}
+
+/* Flip halfway, pause, finish flip. Starting at 0 */
+@keyframes flip-1turn-2steps {
+  from { transform: rotateZ(180deg) rotateY(0deg); }
+  25% { transform: rotateZ(180deg) rotateY(180deg); }
+  50% { transform: rotateZ(180deg) rotateY(180deg); }
+  75% { transform: rotateZ(180deg) rotateY(360deg); }
+  to { transform: rotateZ(180deg) rotateY(360deg); }
+}
+
+/* Flip halfway, pause, finish flip. Starting at -180 */
+@keyframes flip-1turn-2steps-alt {
+  from { transform: rotateZ(180deg) rotateY(-180deg); }
+  25% { transform: rotateZ(180deg) rotateY(0deg); }
+  50% { transform: rotateZ(180deg) rotateY(0deg); }
+  75% { transform: rotateZ(180deg) rotateY(180deg); }
+  to { transform: rotateZ(180deg) rotateY(180deg); }
+}
+
+/* 5 half rotations, 1 full, 5 half, 1 full. Starting at -2520 (0deg minus 7 full turns) */
+@keyframes rotate-5half-1full-x2 {
+  from { transform: rotateZ(-2520deg); }
+  4.166% { transform: rotateZ(-2340deg); }
+  8.333% { transform: rotateZ(-2340deg); }
+  12.5% { transform: rotateZ(-2160deg); }
+  16.666% { transform: rotateZ(-2160deg); }
+  20.833% { transform: rotateZ(-1980deg); }
+  25% { transform: rotateZ(-1980deg); }
+  29.166% { transform: rotateZ(-1800deg); }
+  33.333% { transform: rotateZ(-1800deg); }
+  37.5% { transform: rotateZ(-1620deg); }
+  41.666% { transform: rotateZ(-1620deg); }
+  45.833% { transform: rotateZ(-1260deg); } /* Full turn */
+  50% { transform: rotateZ(-1260deg); }
+  54.166% { transform: rotateZ(-1080deg); }
+  58.333% { transform: rotateZ(-1080deg); }
+  62.5% { transform: rotateZ(-900deg); }
+  66.666% { transform: rotateZ(-900deg); }
+  70.833% { transform: rotateZ(-720deg); }
+  75% { transform: rotateZ(-720deg); }
+  79.166% { transform: rotateZ(-540deg); }
+  83.333% { transform: rotateZ(-540deg); }
+  87.5% { transform: rotateZ(-360deg); }
+  91.666% { transform: rotateZ(-360deg); }
+  95.833% { transform: rotateZ(-0deg); } /* Full Turn */
+  to { transform: rotateZ(-0deg); }
+}
+
+/* 5 half rotations, 1 full, 5 half, 1 full. Starting at -2700 (-180deg minus 7 full turns) */
+@keyframes rotate-5half-1full-x2-alt {
+  from { transform: rotateZ(-2700deg); }
+  4.166% { transform: rotateZ(-2520deg); }
+  8.333% { transform: rotateZ(-2520deg); }
+  12.5% { transform: rotateZ(-2340deg); }
+  16.666% { transform: rotateZ(-2340deg); }
+  20.833% { transform: rotateZ(-2160deg); }
+  25% { transform: rotateZ(-2160deg); }
+  29.166% { transform: rotateZ(-1980deg); }
+  33.333% { transform: rotateZ(-1980deg); }
+  37.5% { transform: rotateZ(-1800deg); }
+  41.666% { transform: rotateZ(-1800deg); }
+  45.833% { transform: rotateZ(-1440deg); } /* Full Turn */
+  50% { transform: rotateZ(-1440deg); }
+  54.166% { transform: rotateZ(-1260deg); }
+  58.333% { transform: rotateZ(-1260deg); }
+  62.5% { transform: rotateZ(-1080deg); }
+  66.666% { transform: rotateZ(-1080deg); }
+  70.833% { transform: rotateZ(-900deg); }
+  75% { transform: rotateZ(-900deg); }
+  79.166% { transform: rotateZ(-720deg); }
+  83.333% { transform: rotateZ(-720deg); }
+  87.5% { transform: rotateZ(-540deg); }
+  91.666% { transform: rotateZ(-540deg); }
+  95.833% { transform: rotateZ(-180deg); } /* Full Turn */
+  to { transform: rotateZ(-180deg); }
+}*/

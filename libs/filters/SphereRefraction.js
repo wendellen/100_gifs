@@ -10,9 +10,9 @@
     numberOfInputs: options.numberOfInputs,
     uniforms: FilterDefinitions._baseUniforms( options.numberOfInputs, {
         center: {type: 'v2', value: new THREE.Vector2(0.5, 0.5)},
-        radius: {type: 'float', value: 0.3},
-        aspectRatio: {type: 'float', value: 1.0},
-        refractiveIndex: {type: 'float', value: 0.6}
+        radius: {type: 'float', value: 1.0},
+        aspectRatio: {type: 'float', value: 0.5},
+        refractiveIndex: {type: 'float', value: 1.0}
     }),
     vertexShader: FilterDefinitions._baseVertexShader(),
     fragmentShader: `

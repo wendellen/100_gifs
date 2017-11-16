@@ -1,7 +1,7 @@
 
 <html>
     <head>
-      <title>0014</title>
+      <title>0015</title>
       <meta name="apple-mobile-web-app-capable" content="yes">
       <meta http-equiv="expires" content="0">
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/88/three.js"></script>
@@ -42,16 +42,16 @@
                 // trippy filter
                 var filterChain = new THREE.FilterChain( renderer, scene, camera )
                 var blend = filterChain.createFilter("DifferenceBlend")
-                var blend2 = filterChain.createFilter("ModBlend")
-                var pixel = filterChain.createFilter("ColorInvert")
+                var blend2 = filterChain.createFilter("AddBlend")
+                var color = filterChain.createFilter("RotateColor")
                 var pattern = filterChain.createFilter("Pixelate")
 
                 filterChain.addTarget(pattern)
                 pattern.addTarget(blend)
                 blend.addTarget (blend2)
 
-                filterChain.addTarget(pixel)
-                pixel.addTarget(blend)
+                filterChain.addTarget(color)
+                color.addTarget(blend)
 
                 blend2.addTarget( "screen")
 

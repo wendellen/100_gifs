@@ -9,8 +9,8 @@
     name: options.name,
     numberOfInputs: options.numberOfInputs,
     uniforms: FilterDefinitions._baseUniforms( options.numberOfInputs, {
-        fractionalWidthOfPixel: {type: 'float', value: 0.02},
-        aspectRatio: {type: 'float', value: 1.0}
+        fractionalWidthOfPixel: {type: 'float', value: 0.15},
+        aspectRatio: {type: 'float', value: 10.0}
     }),
     vertexShader: FilterDefinitions._baseVertexShader(),
     fragmentShader: `

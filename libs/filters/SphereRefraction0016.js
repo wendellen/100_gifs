@@ -1,7 +1,7 @@
 (function(){
 
   const options = {
-    name: 'SphereRefraction',
+    name: 'SphereRefraction0016',
     numberOfInputs: 1
   }
 

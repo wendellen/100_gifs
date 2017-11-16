@@ -1,7 +1,7 @@
 
 <html>
     <head>
-      <title>0017</title>
+      <title>0019</title>
       <meta name="apple-mobile-web-app-capable" content="yes">
       <meta http-equiv="expires" content="0">
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/88/three.js"></script>
@@ -14,9 +14,11 @@
         <script src="libs/filters/Blends.js"></script>
         <script src="libs/filters/Delay.js"></script>
         <script src="libs/filters/Swirl.js"></script>
+        <script src="libs/filters/Swirl0018.js"></script>
         <script src="libs/filters/SphereRefraction.js"></script>
-        <script src="libs/filters/SphereRefraction0016.js"></script>
+        <script src="libs/filters/SphereRefraction0017.js"></script>
         <script src="libs/filters/Pixelate.js"></script>
+        <script src="libs/filters/Pixelate0019.js"></script>
         <script src="libs/filters/Math.js"></script>
         <script src="libs/filters/BilateralBlur.js"></script>
         <script src="libs/filters/Color.js"></script>
@@ -43,19 +45,19 @@
 
                 // trippy filter
                 var filterChain = new THREE.FilterChain( renderer, scene, camera )
-                var blend = filterChain.createFilter("DifferenceBlend")
-                var blend2 = filterChain.createFilter("AddBlend")
-                var color = filterChain.createFilter("SphereRefraction0016")
-                var pattern = filterChain.createFilter("Pattern0017")
+                var f1 = filterChain.createFilter("AddBlend")
+                var f2 = filterChain.createFilter("ModBlend")
+                var f3 = filterChain.createFilter("Pixelate0019")
+                var f4 = filterChain.createFilter("Grow")
 
-                filterChain.addTarget(pattern)
-                pattern.addTarget(blend)
-                blend.addTarget (blend2)
+                filterChain.addTarget(f4)
+                f4.addTarget(f1)
+                f1.addTarget (f2)
 
-                filterChain.addTarget(color)
-                color.addTarget(blend)
+                filterChain.addTarget(f3)
+                f3.addTarget(f1)
 
-                blend2.addTarget( "screen")
+                f2.addTarget( "screen")
 
 
 

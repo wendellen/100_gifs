@@ -9,7 +9,8 @@
     name: options.name,
     numberOfInputs: options.numberOfInputs,
     uniforms: FilterDefinitions._baseUniforms( options.numberOfInputs, {
-      time: {value: 100, update: v => {return v+.005}}
+      time: {value: 100, update: v => {return v+.005}},
+      size: {value: 0.5, update: v => { return 2*Math.sin(Date.now()/500)}}
     }),
     vertexShader: FilterDefinitions._baseVertexShader(),
     fragmentShader: `
@@ -19,6 +20,7 @@
       */
 
       uniform float time;
+      uniform float size;
       varying vec2 inputCoord;
 
       // Example varyings passed from the vertex shader
@@ -38,8 +40,8 @@
         q.y = -p.x * sin_a + p.y * cos_a;
 
         float d = length(q);
-        d += sin(sin(q.x * 1.43 - time * 0.671) * -1.7 + time * 0.137 + p.y * 0.432) * 0.5;
-        d += sin(sin(q.y * -3.17 + time * 0.592) * 1.3 - time * 0.277 + p.x * 0.317) * 0.5;
+        d += sin(sin(q.x * 1.43 - time * 0.671) * -1.7 + time * 0.137 + p.y * 0.432) * size;
+        d += sin(sin(q.y * -3.17 + time * 0.592) * 1.3 - time * 0.277 + p.x * 0.317) * size;
         d -= time * 0.01;
 
         float v = clamp(sin(d * 60.0), 0.0, 1.0);

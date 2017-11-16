@@ -14,6 +14,7 @@
         <script src="libs/filters/Blends.js"></script>
         <script src="libs/filters/Delay.js"></script>
         <script src="libs/filters/Swirl.js"></script>
+        <script src="libs/filters/Swirl0018.js"></script>
         <script src="libs/filters/SphereRefraction.js"></script>
         <script src="libs/filters/SphereRefraction0016.js"></script>
         <script src="libs/filters/Pixelate.js"></script>
@@ -46,7 +47,7 @@
                 var blend = filterChain.createFilter("DifferenceBlend")
                 var blend2 = filterChain.createFilter("AddBlend")
                 var color = filterChain.createFilter("SphereRefraction")
-                var pattern = filterChain.createFilter("Pattern0017")
+                var pattern = filterChain.createFilter("Swirl0018")
 
                 filterChain.addTarget(pattern)
                 pattern.addTarget(blend)

@@ -38,8 +38,8 @@
         q.y = -p.x * sin_a + p.y * cos_a;
 
         float d = length(q);
-        d += sin(sin(q.x * 1.43 - time * 0.671) * -1.7 + time * 0.137 + p.y * 0.432) * 2.5;
-        d += sin(sin(q.y * -3.17 + time * 0.592) * 1.3 - time * 0.277 + p.x * 0.317) * 8.2;
+        d += sin(sin(q.x * 1.43 - time * 0.671) * -1.7 + time * 0.137 + p.y * 0.432) * 4.5;
+        d += sin(sin(q.y * -3.17 + time * 0.592) * 1.3 - time * 0.277 + p.x * 0.317) * 6.2;
         d -= time * 0.01;
 
         float v = clamp(sin(d * 60.0), 0.0, 1.0);

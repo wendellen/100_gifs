@@ -42,9 +42,9 @@
                 // trippy filter
                 var filterChain = new THREE.FilterChain( renderer, scene, camera )
                 var blend = filterChain.createFilter("DifferenceBlend")
-                var blend2 = filterChain.createFilter("AddBlend")
+                var blend2 = filterChain.createFilter("ModBlend")
                 var pixel = filterChain.createFilter("ColorInvert")
-                var pattern = filterChain.createFilter("Pattern")
+                var pattern = filterChain.createFilter("Pixelate")
 
                 filterChain.addTarget(pattern)
                 pattern.addTarget(blend)

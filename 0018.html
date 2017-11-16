@@ -1,7 +1,7 @@
 
 <html>
     <head>
-      <title>0016</title>
+      <title>0018</title>
       <meta name="apple-mobile-web-app-capable" content="yes">
       <meta http-equiv="expires" content="0">
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/88/three.js"></script>
@@ -23,6 +23,7 @@
         <script src="libs/filters/SobelEdgeDetection.js"></script>
         <script src="libs/filters/Glitch.js"></script>
         <script src="libs/filters/Pattern.js"></script>
+        <script src="libs/filters/Pattern0017.js"></script>
         <script src="libs/filters/Noise.js"></script>
 
         <script src="libs/three.FilterChain.js"></script>
@@ -45,10 +46,10 @@
                 var blend = filterChain.createFilter("DifferenceBlend")
                 var blend2 = filterChain.createFilter("AddBlend")
                 var color = filterChain.createFilter("SphereRefraction")
-                var pixel = filterChain.createFilter("Pixelate")
+                var pattern = filterChain.createFilter("Pattern0017")
 
-                filterChain.addTarget(pixel)
-                pixel.addTarget(blend)
+                filterChain.addTarget(pattern)
+                pattern.addTarget(blend)
                 blend.addTarget (blend2)
 
                 filterChain.addTarget(color)

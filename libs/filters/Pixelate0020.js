@@ -1,7 +1,7 @@
 (function(){
 
   const options = {
-    name: 'Pixelate',
+    name: 'Pixelate0020',
     numberOfInputs: 1
   }
 
@@ -9,8 +9,8 @@
     name: options.name,
     numberOfInputs: options.numberOfInputs,
     uniforms: FilterDefinitions._baseUniforms( options.numberOfInputs, {
-        fractionalWidthOfPixel: {type: 'float', value: 0.05},
-        aspectRatio: {type: 'float', value: 5.0}
+        fractionalWidthOfPixel: {type: 'float', value: 0.25},
+        aspectRatio: {type: 'float', value: 1.0}
     }),
     vertexShader: FilterDefinitions._baseVertexShader(),
     fragmentShader: `

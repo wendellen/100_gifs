@@ -17,6 +17,7 @@
         <script src="libs/filters/SphereRefraction.js"></script>
         <script src="libs/filters/SphereRefraction0016.js"></script>
         <script src="libs/filters/Pixelate.js"></script>
+        <script src="libs/filters/Pixelate0020.js"></script>
         <script src="libs/filters/Math.js"></script>
         <script src="libs/filters/BilateralBlur.js"></script>
         <script src="libs/filters/Color.js"></script>
@@ -45,7 +46,7 @@
                 var blend = filterChain.createFilter("DifferenceBlend")
                 var blend2 = filterChain.createFilter("AddBlend")
                 var color = filterChain.createFilter("SphereRefraction0016")
-                var pixel = filterChain.createFilter("Pixelate")
+                var pixel = filterChain.createFilter("Pixelate0020")
 
                 filterChain.addTarget(pixel)
                 pixel.addTarget(blend)
@@ -55,6 +56,7 @@
                 color.addTarget(blend)
 
                 blend2.addTarget( "screen")
+
 
 
 

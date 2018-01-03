@@ -1,0 +1,84 @@
+html {
+  background-color: #fff
+}
+
+div {
+  -webkit-transition: all 0.35s ease-in-out; /* Safari */
+  transition: all 0.35s ease-in-out;
+}
+div#container {
+  width: 240px;
+  height: 240px;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  overflow: hidden;
+}
+
+#d1, #d4, #d7, #d22, #d28, #d29,
+#d30, #d34, #d35, #d36, #d37, #d38  {
+  width:30px;
+  height:30px;
+  background-color: #fff;
+  float:left;
+  border:1px solid #fff;
+  /*transition: all 1s ease-in-out;*/
+  border-radius: 1px 1px;
+}
+
+#d2, #d3, #d5, #d6, #d8, #d9, #d10,
+#d11, #d12, #d13, #d14, #d15, #d16,
+#d17, #d18, #d19, #d20, #d21, #d23,
+#d24, #d25, #d26, #d27, #d31, #d32,
+#d33, #d39 {
+  width:30px;
+  height:30px;
+  background-color: #000;
+  float:left;
+  border: 1px solid #000;
+    border-radius: 1px 1px;
+  /*transition: all 1s ease-in-out;*/
+}
+/* beat */
+div#container:hover {
+  width: 280px;
+  height: 280px;
+}
+
+#container:hover #d1, #container:hover #d4, #container:hover #d7, #container:hover #d22, #container:hover #d28, #container:hover #d29,
+#container:hover #d30, #container:hover #d34, #container:hover #d35, #container:hover #d36, #container:hover #d37, #container:hover #d38  {
+margin:3px;
+}
+
+#container:hover #d2, #container:hover #d3, #container:hover #d5, #container:hover #d6, #container:hover #d8, #container:hover #d9, #container:hover #d10,
+#container:hover #d11, #container:hover #d12, #container:hover #d13, #container:hover #d14, #container:hover #d15, #container:hover #d16,
+#container:hover #d17, #container:hover #d18, #container:hover #d19, #container:hover #d20, #container:hover #d21, #container:hover #d23,
+#container:hover #d24, #container:hover #d25, #container:hover #d26, #container:hover #d27, #container:hover #d31, #container:hover #d32,
+#container:hover #d33, #container:hover #d39 {
+margin:3px;
+background-color:#000;
+}
+
+div#container:active {
+  width: 380px;
+  height: 380px;
+}
+
+#container:active #d1, #container:active #d4, #container:active #d7, #container:active #d22, #container:active #d28, #container:active #d29,
+#container:active #d30, #container:active #d34, #container:active #d35, #container:active #d36, #container:active #d37, #container:active #d38  {
+margin:10px;
+opacity:0;
+}
+
+#container:active #d2, #container:active #d3, #container:active #d5, #container:active #d6, #container:active #d8, #container:active #d9, #container:active #d10,
+#container:active #d11, #container:active #d12, #container:active #d13, #container:active #d14, #container:active #d15, #container:active #d16,
+#container:active #d17, #container:active #d18, #container:active #d19, #container:active #d20, #container:active #d21, #container:active #d23,
+#container:active #d24, #container:active #d25, #container:active #d26, #container:active #d27, #container:active #d31, #container:active #d32,
+#container:active #d33, #container:active #d39 {
+margin:10px;
+opacity:0;
+background-color:#000;
+}

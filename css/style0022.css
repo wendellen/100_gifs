@@ -1,0 +1,12 @@
+body {
+  background: linear-gradient(to right, pink, papayawhip, powderblue, thistle);
+  padding: 0;
+}
+
+.weed {
+  width: 1000;
+  height: 1000;
+  stroke: white;
+  stroke-width: 8;
+  fill: none;
+}

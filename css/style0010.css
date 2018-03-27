@@ -32,34 +32,6 @@ body{
 
 div{ margin-bottom: 5px; }
 
-/*.donger {
-  transform: rotate(5deg);
-  width: 400px;
-  height: 200px;
-  background-color: #9F5FB3;
-  color: white;
-  transition: all 0.9s ease-in-out;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 10px 10px 0 rgba(0,0,0,.2);
-  cursor: pointer;
-  margin: 30px;
-}
-
-.donger:hover {
-  transform: rotate(0deg) skew(40deg);
-  opacity: 1.0;
-  background-color: #7DE3F4;
-  box-shadow: 50px 50px 0 rgba(0,0,0,.2);
-}
-
-.donger:active{
-  padding-top:100px;
-  box-shadow: -70px -70px 0 rgba(0,0,0,.2);
-  background-color: #A852FF;
-}*/
-
 
 .bloom {
   width: 500px;
